@@ -1,0 +1,146 @@
+const byId = (id) => document.getElementById(id);
+const getValue = (item) => item && item.status === 'verified' ? item.value : null;
+
+function setText(id, value, fallback) {
+  const node = byId(id);
+  if (node) node.textContent = value == null || value === '' ? fallback : String(value);
+}
+
+function safeLink(id, url, fallbackText) {
+  const node = byId(id);
+  if (!node) return;
+  if (typeof url === 'string' && /^https:\/\//i.test(url)) {
+    node.href = url;
+    node.target = '_blank';
+    node.rel = 'noreferrer';
+  } else {
+    node.href = '#contacts';
+    node.removeAttribute('target');
+    node.removeAttribute('rel');
+    if (fallbackText) node.textContent = fallbackText;
+  }
+}
+
+async function loadProfile() {
+  const blank = new URLSearchParams(location.search).get('profile') === 'blank';
+  const file = blank ? 'data/blank-profile.json' : 'data/business-profile.json';
+  try {
+    const response = await fetch(file, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Profile could not be loaded');
+    const profile = await response.json();
+    renderProfile(profile);
+  } catch (error) {
+    document.documentElement.dataset.profileError = 'true';
+    renderProfile(null);
+  }
+}
+
+function renderProfile(profile) {
+  const b = profile?.business || {};
+  const name = getValue(b.name);
+  const city = getValue(b.city);
+  const address = getValue(b.address);
+  const cardUrl = getValue(b.yandex_card_url);
+  setText('brand-name', name, 'Автосервис');
+  setText('hero-name', name, 'Название автосервиса');
+  setText('footer-name', name, 'Автосервис');
+  setText('hero-address', [city, address].filter(Boolean).join(' · '), 'Адрес уточняется');
+  setText('hero-card-address', address || 'Адрес уточняется');
+  setText('contact-address', [city, address].filter(Boolean).join(', '), 'Адрес уточняется');
+  setText('contact-hours', getValue(b.hours), 'Время работы не указано');
+  safeLink('map-link', cardUrl, 'Ссылка на карту не указана');
+  safeLink('contact-map', cardUrl, 'Ссылка на карту не указана');
+  safeLink('reviews-link', cardUrl, 'Карточка организации не указана');
+
+  const rating = getValue(b.rating);
+  const scale = getValue(b.rating_scale);
+  setText('rating-value', rating, '—');
+  setText('rating-scale', scale == null ? '/ —' : `/ ${scale}`);
+  setText('ratings-count', getValue(b.ratings_count), '—');
+  setText('text-reviews-count', getValue(b.text_reviews_count), '—');
+  if (rating == null) byId('rating-value').closest('.rating-fact').querySelector('.stars').setAttribute('aria-label', 'Оценка пока не указана');
+  const activity = getValue(b.activity_at_1600);
+  setText('activity-note', activity ? `В карточке указано: «${activity}». Это не подтверждает свободное место или запись.` : 'Текущая загруженность и доступность записи не подтверждены.');
+  setText('header-contact', getValue(b.phone) ? 'Позвонить ↗' : 'Контакты ↗');
+  const phone = getValue(b.phone);
+  const phoneNode = byId('contact-phone');
+  if (phone) {
+    phoneNode.href = `tel:${String(phone).replace(/[^+\d]/g, '')}`;
+    phoneNode.removeAttribute('aria-disabled');
+    phoneNode.textContent = String(phone);
+    byId('header-contact').href = phoneNode.href;
+  }
+  if (Array.isArray(getValue(b.price_list)) && getValue(b.price_list).length) renderPrices(getValue(b.price_list));
+  if (Array.isArray(getValue(b.services)) && getValue(b.services).length) renderServices(getValue(b.services));
+}
+
+function renderPrices(rows) {
+  const tbody = byId('price-rows');
+  tbody.replaceChildren();
+  for (const item of rows) {
+    const tr = document.createElement('tr');
+    for (const [key, label] of [['name', 'Работа'], ['scope', 'Что входит'], ['unit', 'Единица'], ['price', 'Цена']]) {
+      const td = document.createElement('td');
+      td.dataset.label = label;
+      td.textContent = item?.[key] ?? 'Уточняется';
+      if (key === 'price') td.className = 'price-value';
+      tr.append(td);
+    }
+    tbody.append(tr);
+  }
+}
+
+function renderServices(items) {
+  const content = byId('services-content');
+  const list = document.createElement('ul');
+  list.className = 'confirmed-services';
+  for (const service of items) {
+    const li = document.createElement('li');
+    li.textContent = typeof service === 'string' ? service : service?.name || 'Уточняется';
+    list.append(li);
+  }
+  content.replaceChildren(list);
+}
+
+const toggle = document.querySelector('.menu-toggle');
+const nav = byId('site-nav');
+toggle.addEventListener('click', () => {
+  const open = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!open));
+  toggle.querySelector('span').textContent = open ? '+' : '−';
+  nav.classList.toggle('is-open', !open);
+});
+nav.addEventListener('click', (event) => {
+  if (event.target.closest('a')) {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.querySelector('span').textContent = '+';
+    nav.classList.remove('is-open');
+  }
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.querySelector('span').textContent = '+';
+    nav.classList.remove('is-open');
+  }
+});
+
+byId('problem-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const symptoms = byId('symptoms').value.trim();
+  const car = byId('car-details').value.trim();
+  if (!symptoms && !car) {
+    byId('form-status').textContent = 'Сначала добавьте описание или автомобиль.';
+    byId('symptoms').focus();
+    return;
+  }
+  const text = [`Что происходит: ${symptoms || 'не указано'}`, `Автомобиль: ${car || 'не указан'}`].join('\n');
+  try {
+    await navigator.clipboard.writeText(text);
+    byId('form-status').textContent = 'Описание скопировано. Отправьте его автосервису удобным способом.';
+  } catch {
+    byId('form-status').textContent = text;
+  }
+});
+
+loadProfile();

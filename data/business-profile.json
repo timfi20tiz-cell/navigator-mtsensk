@@ -1,0 +1,101 @@
+{
+  "business": {
+    "name": {
+      "value": "Навигатор",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "logo": {
+      "value": "logo.png",
+      "status": "confirmed",
+      "source": "https://vk.com/navigator_mtsensk",
+      "verified_at": "2026-11-04"
+    },
+    "city": {
+      "value": "Мценск",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "address": {
+      "value": "Лицейская ул., 3",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "phone": {
+      "value": "+7 (920) 801-04-51",
+      "status": "confirmed",
+      "source": "https://vk.com/navigator_mtsensk",
+      "verified_at": "2026-11-04"
+    },
+    "vk_url": {
+      "value": "https://vk.com/navigator_mtsensk",
+      "status": "confirmed",
+      "source": "https://vk.com/navigator_mtsensk",
+      "verified_at": "2026-11-04"
+    },
+    "yandex_card_url": {
+      "value": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "rating": {
+      "value": 4.6,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "rating_scale": {
+      "value": 5,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "ratings_count": {
+      "value": 52,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "text_reviews_count": {
+      "value": 27,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    },
+    "hours": {
+      "value": "Пн-Сб: 09:00 - 18:00 (перерыв 12:00 - 13:00), Вс: выходной",
+      "status": "confirmed",
+      "source": "2GIS Places API",
+      "verified_at": "2026-11-04"
+    },
+    "services": {
+      "value": [
+        "Компьютерная диагностика автомобилей",
+        "Ремонт ходовой части и подвески",
+        "Регулировка развала-схождения",
+        "Замена моторного масла и технических жидкостей",
+        "Ремонт и обслуживание АКПП",
+        "Обслуживание климатических систем (автокондиционеры)",
+        "Установка и регулировка автооптики",
+        "Слесарный ремонт легковых автомобилей"
+      ],
+      "status": "confirmed",
+      "source": "2GIS Places API",
+      "verified_at": "2026-11-04"
+    },
+    "photos": {
+      "value": [
+        "https://avatars.mds.yandex.net/get-altay/2755030/2a0000017294011da3dbe51fa9070c03ebd8/XXL_height",
+        "https://avatars.mds.yandex.net/get-altay/4284571/2a00000178a891e60deb228af212e72d8f0c/XXL_height",
+        "https://avatars.mds.yandex.net/get-altay/2812564/2a00000172940121e450fae460d8c8b3a3f7/XXL_height"
+      ],
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/navigator/181325334487/",
+      "verified_at": "2026-11-04"
+    }
+  }
+}

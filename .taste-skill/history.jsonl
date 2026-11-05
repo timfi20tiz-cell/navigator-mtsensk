@@ -1,0 +1,26 @@
+[
+ {
+  "at": "2026-11-03T16:01:15.509Z",
+  "direction": "type-only-statement",
+  "type": "boska-roman-italic",
+  "hero": "waterline-headline",
+  "sector": "other",
+  "scenes": []
+ },
+ {
+  "at": "2026-11-03T16:00:42.502Z",
+  "direction": "type-only-statement",
+  "type": "newsreader-light",
+  "hero": "headline-across-two-fields",
+  "sector": "other",
+  "scenes": []
+ },
+ {
+  "at": "2026-11-03T16:00:02.032Z",
+  "direction": "type-only-statement",
+  "type": "zodiak-hairline",
+  "hero": "stacked-name-two-inks",
+  "sector": "other",
+  "scenes": []
+ }
+]

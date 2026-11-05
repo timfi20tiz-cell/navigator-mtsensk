@@ -1,0 +1,21 @@
+{
+  "business": {
+    "name": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "city": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "address": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "yandex_card_url": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "rating": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "rating_scale": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "ratings_count": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "text_reviews_count": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "activity_at_1600": { "value": null, "status": "unknown", "source": null, "verified_at": null, "note": null },
+    "phone": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "hours": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "services": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "vehicle_compatibility": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "workflow": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "photos": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "faq": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "price_list": { "value": [], "status": "unknown", "source": null, "verified_at": null }
+  }
+}

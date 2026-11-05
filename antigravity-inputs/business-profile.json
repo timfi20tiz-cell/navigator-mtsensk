@@ -1,0 +1,68 @@
+{
+  "business": {
+    "name": {
+      "value": "Автосервис",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03",
+      "note": "Имя карточки, не считать официальным брендом"
+    },
+    "city": {
+      "value": "Мценск",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "address": {
+      "value": "ул. Карла Маркса, 129, Мценск",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "yandex_card_url": {
+      "value": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "rating": {
+      "value": 4.4,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "rating_scale": {
+      "value": 5,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "ratings_count": {
+      "value": 173,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "text_reviews_count": {
+      "value": 53,
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03"
+    },
+    "activity_at_1600": {
+      "value": "Обычно много посетителей",
+      "status": "confirmed",
+      "source": "https://yandex.ru/maps/org/avtoservis/147869827813/",
+      "verified_at": "2026-11-03",
+      "note": "Индикатор Яндекс Карт, не гарантия загрузки в каждый день; не обещать запись по индикатору посещаемости"
+    },
+    "phone": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "hours": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "services": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "vehicle_compatibility": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "workflow": { "value": null, "status": "unknown", "source": null, "verified_at": null },
+    "photos": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "faq": { "value": [], "status": "unknown", "source": null, "verified_at": null },
+    "price_list": { "value": [], "status": "unknown", "source": null, "verified_at": null }
+  }
+}
