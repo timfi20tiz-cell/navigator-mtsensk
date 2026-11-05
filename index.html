@@ -166,24 +166,52 @@
 
     <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
       <div class="section-wrap">
-        <div class="gallery-heading">
+        <div class="gallery-header">
           <div>
             <p class="eyebrow">03 / Фото сервиса</p>
             <h2 id="gallery-title">Здание и посты обслуживания</h2>
           </div>
+          <div class="slider-controls" aria-label="Управление галереей">
+            <button class="slider-btn" id="slider-prev" type="button" aria-label="Предыдущее фото">←</button>
+            <span class="slider-counter" id="slider-counter" aria-live="polite">1 / 8</span>
+            <button class="slider-btn" id="slider-next" type="button" aria-label="Следующее фото">→</button>
+          </div>
         </div>
-        <div class="photo-slots">
-          <div class="photo-card">
-            <img src="https://avatars.mds.yandex.net/get-altay/2755030/2a0000017294011da3dbe51fa9070c03ebd8/XXL_height" alt="Фасад и вывеска автосервиса Навигатор на Лицейской, 3" loading="lazy">
-            <div class="photo-caption">Фасад автосервиса и вход для клиентов</div>
-          </div>
-          <div class="photo-card">
-            <img src="https://avatars.mds.yandex.net/get-altay/4284571/2a00000178a891e60deb228af212e72d8f0c/XXL_height" alt="Рабочая зона бокса и подъёмник автосервиса" loading="lazy">
-            <div class="photo-caption">Оборудованная зона ремонта и подъёмники</div>
-          </div>
-          <div class="photo-card">
-            <img src="https://avatars.mds.yandex.net/get-altay/2812564/2a00000172940121e450fae460d8c8b3a3f7/XXL_height" alt="Посты техобслуживания автосервиса Навигатор" loading="lazy">
-            <div class="photo-caption">Посты диагностики и обслуживания авто</div>
+
+        <div class="slider-track-wrap">
+          <div class="slider-track" id="gallery-slider" tabindex="0" role="region" aria-label="Галерея фотографий автосервиса">
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_facade.jpg" alt="Фасад автосервиса Навигатор на Лицейской, 3" loading="lazy">
+              <div class="slide-caption">Фасад сервиса и заезд с Лицейской, 3</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_13.jpg" alt="Mercedes-Benz на компьютерном стенде сход-развала 3D" loading="lazy">
+              <div class="slide-caption">Mercedes-Benz на 3D стенде сход-развала</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_11.jpg" alt="Вид из бокса обслуживания на заезд" loading="lazy">
+              <div class="slide-caption">Рабочий бокс и заезд для автомобилей</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_15.jpg" alt="Монитор компьютерной калибровки углов подвески" loading="lazy">
+              <div class="slide-caption">Высокоточная калибровка углов подвески</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_14.jpg" alt="Обслуживание внедорожника на специализированном посту" loading="lazy">
+              <div class="slide-caption">Пост обслуживания кроссоверов и внедорожников</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_16.jpg" alt="Заезд легкового автомобиля на пост обслуживания" loading="lazy">
+              <div class="slide-caption">Приём автомобиля на регулировку и ТО</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_2.jpg" alt="Range Rover на стенде калибровки ходовой" loading="lazy">
+              <div class="slide-caption">Range Rover на стенде калибровки ходовой</div>
+            </div>
+            <div class="slide-card">
+              <img src="assets/gallery/gallery_3.jpg" alt="Регулировка геометрии подвески легковых авто" loading="lazy">
+              <div class="slide-caption">Регулировка геометрии подвески легковых авто</div>
+            </div>
           </div>
         </div>
       </div>

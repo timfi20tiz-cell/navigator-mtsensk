@@ -60,3 +60,37 @@ if (problemForm) {
     });
   }
 }
+
+// Слайдер галереи
+const slider = byId('gallery-slider');
+const prevBtn = byId('slider-prev');
+const nextBtn = byId('slider-next');
+const counter = byId('slider-counter');
+
+if (slider && prevBtn && nextBtn && counter) {
+  const slides = slider.querySelectorAll('.slide-card');
+  const total = slides.length;
+
+  const getStep = () => {
+    const card = slides[0];
+    return card ? card.offsetWidth + 16 : 300;
+  };
+
+  const updateCounter = () => {
+    const step = getStep();
+    const current = Math.min(total, Math.max(1, Math.round(slider.scrollLeft / step) + 1));
+    counter.textContent = `${current} / ${total}`;
+  };
+
+  prevBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  slider.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateCounter);
+  }, { passive: true });
+}
